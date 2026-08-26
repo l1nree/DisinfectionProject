@@ -10,12 +10,60 @@
     <header class="navbar">
         <nav>
             <ul class="nav-links">
-                <li><a href="#home">Главная страница</a></li>
+                <li><a href="#home" class="active">Главная страница</a></li>
                 <li><a href="#products">Продукты</a></li>
                 <li><a href="#contacts">Контакты</a></li>
                 <li><a href="#info">Дополнительная информация</a></li>
             </ul>
         </nav>
+        <button
+    class="basket-button"
+    id="basketButton"
+    aria-label="Открыть корзину"
+    type="button"
+>
+    <svg
+        class="basket-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M3 9H21L19.5 21H4.5L3 9Z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linejoin="round"
+        />
+
+        <path
+            d="M8 9L10 3H14L16 9"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="M9 13V17"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="M15 13V17"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+        />
+    </svg>
+
+    <span
+        class="basket-counter"
+        id="basketCounter"
+    >
+        0
+    </span>
+</button>
     </header>
 
     <main>
@@ -42,21 +90,21 @@
                     <div class="placeholder-img">[Фото: Жилое помещение]</div>
                     <h3>Дезинфекция жилого помещения</h3>
                     <p>Краткое описание услуги для квартир и домов.</p>
-                    <button class="buy-btn" data-product="home">Купить</button>
+                    <button class="buy-btn" data-product="home">Добавить в корзину</button>
                 </article>
 
                 <article class="product-card">
                     <div class="placeholder-img">[Фото: Офис]</div>
                     <h3>Дезинфекция офиса</h3>
                     <p>Краткое описание услуги для коммерческих помещений.</p>
-                    <button class="buy-btn" data-product="office">Купить</button>
+                    <button class="buy-btn" data-product="office">Добавить в корзину</button>
                 </article>
 
                 <article class="product-card">
                     <div class="placeholder-img">[Фото: Тараканы]</div>
                     <h3>Обработка от тараканов</h3>
                     <p>Краткое описание услуги по дезинсекции.</p>
-                    <button class="buy-btn" data-product="roaches">Купить</button>
+                    <button class="buy-btn" data-product="roaches">Добавить в корзину</button>
                 </article>
             </div>
         </section>
@@ -78,5 +126,45 @@
 
     <!-- Подключение главного скрипта как модуля -->
     <script type="module" src="main.js"></script>
+    <!-- Окно корзины -->
+<div class="basket-overlay" id="basketOverlay">
+    <div class="basket-modal" role="dialog" aria-modal="true">
+
+        <button
+            class="basket-close"
+            id="basketClose"
+            aria-label="Закрыть корзину"
+        >
+            &times;
+        </button>
+
+        <h2>Корзина</h2>
+
+        <div class="basket-items" id="basketItems">
+            <p class="basket-empty">
+                Ваша корзина пуста
+            </p>
+        </div>
+
+        <div class="basket-actions">
+            <button
+                class="basket-clear"
+                id="basketClear"
+            >
+                Очистить корзину
+            </button>
+
+            <button
+                class="basket-checkout"
+                id="basketCheckout"
+            >
+                Приступить к оформлению заказа
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<script type="module" src="main.js"></script>
 </body>
 </html>

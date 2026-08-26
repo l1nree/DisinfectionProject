@@ -1,18 +1,48 @@
 import { Navigation } from "./navigation.js";
+import { Basket } from "./basket.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Инициализация навигации
+  // Навигация
   const siteNavigation = new Navigation(".nav-links");
   siteNavigation.init();
 
-  // Обработка продуктов перенесена в main.js согласно ограничению структуры
+  // Корзина
+  const basket = new Basket();
+  basket.init();
+
+  // Товары
   const productsGrid = document.querySelector(".products-grid");
+
   if (productsGrid) {
     productsGrid.addEventListener("click", (event) => {
-      if (event.target.classList.contains("buy-btn")) {
-        const productId = event.target.dataset.product;
-        console.log(`[Action] Подготовка покупки. Товар ID: ${productId}`);
-      }
+      const button = event.target.closest(".buy-btn");
+
+      if (!button) return;
+
+      const productId = button.dataset.product;
+
+      const products = {
+        home: {
+          name: "Дезинфекция жилого помещения",
+          description: "Дезинфекция квартир и домов.",
+        },
+
+        office: {
+          name: "Дезинфекция офиса",
+          description: "Профессиональная обработка коммерческих помещений.",
+        },
+
+        roaches: {
+          name: "Обработка от тараканов",
+          description: "Эффективная дезинсекция помещения.",
+        },
+      };
+
+      const product = products[productId];
+
+      if (!product) return;
+
+      basket.add(product);
     });
   }
 });

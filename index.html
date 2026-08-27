@@ -1,170 +1,181 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Дезинфекция | Прототип</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
     <header class="navbar">
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Главная страница</a></li>
-                <li><a href="#products">Продукты</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-                <li><a href="#info">Дополнительная информация</a></li>
-            </ul>
-        </nav>
-        <button
-    class="basket-button"
-    id="basketButton"
-    aria-label="Открыть корзину"
-    type="button"
->
-    <svg
-        class="basket-icon"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
+      <nav aria-label="Основная навигация">
+        <ul class="nav-links">
+          <li>
+            <a href="#home" class="active">Главная страница</a>
+          </li>
+          <li>
+            <a href="#products">Услуги</a>
+          </li>
+          <li>
+            <a href="#contacts">Контакты</a>
+          </li>
+          <li>
+            <a href="#info">Дополнительная информация</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button
+        class="basket-button"
+        id="basketButton"
+        type="button"
+        aria-label="Открыть корзину"
+        aria-expanded="false"
+        aria-controls="basketOverlay"
+      >
+        <svg
+          class="basket-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
             d="M3 9H21L19.5 21H4.5L3 9Z"
             stroke="currentColor"
             stroke-width="2"
             stroke-linejoin="round"
-        />
+          />
 
-        <path
+          <path
             d="M8 9L10 3H14L16 9"
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-        />
+          />
 
-        <path
+          <path
             d="M9 13V17"
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-        />
+          />
 
-        <path
+          <path
             d="M15 13V17"
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
-        />
-    </svg>
+          />
+        </svg>
 
-    <span
-        class="basket-counter"
-        id="basketCounter"
-    >
-        0
-    </span>
-</button>
+        <span
+          class="basket-counter"
+          id="basketCounter"
+          aria-label="Товаров в корзине: 0"
+        >
+          0
+        </span>
+      </button>
     </header>
 
     <main>
-        <section id="home" class="section hero-section">
-    <div class="hero-content">
-        <h1>Дезинфекция</h1>
+      <section id="home" class="section hero-section">
+        <div class="hero-content">
+          <h1>Дезинфекция</h1>
 
-        <p class="hero-subtitle">
+          <p class="hero-subtitle">
             Профессиональная дезинфекция помещений
-        </p>
+          </p>
 
-        <p class="hero-description">
+          <p class="hero-description">
             Быстро, безопасно и эффективно. Защита вашего дома и бизнеса.
-        </p>
+          </p>
 
-        <a href="#products" class="hero-btn">Наши услуги</a>
-    </div>
-</section>
+          <a href="#products" class="hero-btn">Наши услуги</a>
+        </div>
+      </section>
 
-        <section id="products" class="section">
-            <h2>Продукты</h2>
-            <div class="products-grid">
-                <article class="product-card">
-                    <div class="placeholder-img">[Фото: Жилое помещение]</div>
-                    <h3>Дезинфекция жилого помещения</h3>
-                    <p>Краткое описание услуги для квартир и домов.</p>
-                    <button class="buy-btn" data-product="home">Добавить в корзину</button>
-                </article>
+      <section id="products" class="section">
+        <h2>Услуги</h2>
 
-                <article class="product-card">
-                    <div class="placeholder-img">[Фото: Офис]</div>
-                    <h3>Дезинфекция офиса</h3>
-                    <p>Краткое описание услуги для коммерческих помещений.</p>
-                    <button class="buy-btn" data-product="office">Добавить в корзину</button>
-                </article>
+        <!-- Карточки создаются в products.js -->
+        <div class="products-grid"></div>
+      </section>
 
-                <article class="product-card">
-                    <div class="placeholder-img">[Фото: Тараканы]</div>
-                    <h3>Обработка от тараканов</h3>
-                    <p>Краткое описание услуги по дезинсекции.</p>
-                    <button class="buy-btn" data-product="roaches">Добавить в корзину</button>
-                </article>
-            </div>
-        </section>
+      <section id="contacts" class="section">
+        <h2>Контакты</h2>
 
-        <section id="contacts" class="section">
-            <h2>Контакты</h2>
-            <address>
-                <p>[Здесь будет номер телефона]</p>
-                <p>[Здесь будет адрес]</p>
-                <p>[Здесь будет почта]</p>
-            </address>
-        </section>
+        <address>
+          <p>Телефон: [Здесь будет номер телефона]</p>
+          <p>Адрес: [Здесь будет адрес]</p>
+          <p>Почта: [Здесь будет почта]</p>
+        </address>
+      </section>
 
-        <section id="info" class="section">
-            <h2>Дополнительная информация</h2>
-            <p>[Здесь будет дополнительная информация]</p>
-        </section>
+      <section id="info" class="section">
+        <h2>Дополнительная информация</h2>
+
+        <p>[Здесь будет дополнительная информация]</p>
+      </section>
     </main>
 
-    <!-- Подключение главного скрипта как модуля -->
-    <script type="module" src="main.js"></script>
-    <!-- Окно корзины -->
-<div class="basket-overlay" id="basketOverlay">
-    <div class="basket-modal" role="dialog" aria-modal="true">
-
+    <div
+      class="basket-overlay"
+      id="basketOverlay"
+      aria-hidden="true"
+    >
+      <div
+        class="basket-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="basketTitle"
+      >
         <button
-            class="basket-close"
-            id="basketClose"
-            aria-label="Закрыть корзину"
+          class="basket-close"
+          id="basketClose"
+          type="button"
+          aria-label="Закрыть корзину"
         >
-            &times;
+          &times;
         </button>
 
-        <h2>Корзина</h2>
+        <h2 id="basketTitle">Корзина</h2>
 
-        <div class="basket-items" id="basketItems">
-            <p class="basket-empty">
-                Ваша корзина пуста
-            </p>
+        <!-- Содержимое обновляется классом Basket -->
+        <div
+          class="basket-items"
+          id="basketItems"
+          aria-live="polite"
+        >
+          <p class="basket-empty">Ваша корзина пуста</p>
         </div>
 
         <div class="basket-actions">
-            <button
-                class="basket-clear"
-                id="basketClear"
-            >
-                Очистить корзину
-            </button>
+          <button
+            class="basket-clear"
+            id="basketClear"
+            type="button"
+          >
+            Очистить корзину
+          </button>
 
-            <button
-                class="basket-checkout"
-                id="basketCheckout"
-            >
-                Приступить к оформлению заказа
-            </button>
+          <button
+            class="basket-checkout"
+            id="basketCheckout"
+            type="button"
+          >
+            Приступить к оформлению заказа
+          </button>
         </div>
-
+      </div>
     </div>
-</div>
 
-<script type="module" src="main.js"></script>
-</body>
+    <!-- Модуль подключается после всей разметки страницы -->
+    <script type="module" src="main.js"></script>
+  </body>
 </html>

@@ -295,6 +295,28 @@ body {
 
     margin: 0 auto;
 }
+.product-price {
+  margin: 0.75rem 0;
+  color: #1f2924;
+  font-weight: 700;
+}
+
+.buy-btn:disabled {
+  background: #d9eef2;
+  color: #59645e;
+  border-color: #a8d5ba;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
 
 .product-card {
